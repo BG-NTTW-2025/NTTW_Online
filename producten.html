@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTTW Webshop - Producten</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Productkaart */
+    .product {
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #007BFF;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ons aanbod (voor nu)</h1>
+    <p>Op dit moment hebben we alleen de complete basisdoos NTTW.</p>
+  </header>
+
+  <main>
+    <!-- Basisspel -->
+    <article class="product">
+      <h2>NTTW - Basisdoos</h2>
+      <p>Het volledige spel in één doos. Bevat alle kaarten, pionnen, stenen, structures én een speelbord.</p>
+      <p class="price">€39,95</p>
+      <button class="btn" onclick='voegProductToe({name:"NTTW - Basisdoos", price:39.95})'>
+        Voeg toe aan winkelwagen
+      </button>
+    </article>
+  </main>
+
+  <footer>
+    <div>
+      <a href="index.html" class="btn">Terug naar start</a>
+      <a href="winkelwagen.html" class="btn">Bekijk winkelwagen</a>
+    </div>
+    <p>&copy; 2025 NTTW Webshop | Demo</p>
+  </footer>
+
+  <!-- Script voor winkelwagen functionaliteit -->
+  <script src="script.js"></script>
+</body>
+</html>

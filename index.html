@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTTW Webshop</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basis stijl knoppen */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #4a69bd;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none; /* voor <a> links */
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #3b5286;
+      transform: scale(1.05);
+    }
+
+    .form-container {
+      margin-top: 40px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welkom bij de NTTW Webshop</h1>
+    <p>Ontdek ons bordspel en wees als eerste op de hoogte van nieuwe uitgaven!</p>
+  </header>
+
+  <main>
+    <!-- Navigatieknoppen -->
+    <div style="text-align:center; margin-top:30px;">
+      <a href="producten.html" class="btn">Bekijk producten</a>
+      <a href="winkelwagen.html" class="btn">Ga naar winkelwagen</a>
+      <a href="nieuws.html" class="btn">Het laatste nieuws</a>
+    </div>
+
+    <!-- Formulier aanmelden nieuwsbrief -->
+    <div class="form-container">
+      <h2>Schrijf je in</h2>
+      <p>Wil je als eerste weten wanneer NTTW wordt uitgebracht? Laat je e-mail achter:</p>
+
+      <!-- vervang 'your-form-id' door je echte Formspree ID -->
+      <form id="aanmeldForm" action="https://formspree.io/f/xblknnya" method="POST">
+        <input type="email" name="email" placeholder="Jouw e-mailadres" required style="width:100%; padding:10px; margin-bottom:10px;">
+        <button type="submit" class="btn" style="width:100%;">Aanmelden</button>
+      </form>
+
+      <!-- Bedankmelding -->
+      <p id="bedankMelding" class="hidden">Bedankt voor je aanmelding! 🎉 Je hoort van ons.</p>
+    </div>
+  </main>
+
+  <script>
+    // Script om bedankmelding te tonen en redirect terug naar index
+    const form = document.getElementById("aanmeldForm");
+    const melding = document.getElementById("bedankMelding");
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const data = new FormData(form);
+      const action = form.action;
+
+      const response = await fetch(action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.classList.add("hidden");
+        melding.classList.remove("hidden");
+
+        // 3 sec wachten, dan terug naar index (f5 effect)
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 3000);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTTW Webshop - Winkelwagen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Je winkelwagen</h1>
+  </header>
+
+  <main>
+    <!-- Hier komen de producten dynamisch -->
+    <div id="cart-items"></div>
+
+    <div id="cart-total">
+      <p>Totaal: €<span id="total">0.00</span></p>
+    </div>
+
+    <div class="checkout-buttons">
+      <a href="producten.html" class="btn">Verder winkelen</a>
+      <a href="afrekenen.html" class="btn">Afrekenen</a>
+      <button class="btn" onclick="localStorage.removeItem('nttwCart'); renderCart();">
+        Winkelwagen leegmaken
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 NTTW Webshop | Demo</p>
+  </footer>
+
+  <!-- Script voor winkelwagen functionaliteit -->
+  <script src="script.js"></script>
+</body>
+</html>
