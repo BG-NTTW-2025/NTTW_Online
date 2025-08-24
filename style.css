@@ -2,6 +2,10 @@
    Algemene stijlen webshop
    Thema: Paars / Roze
    ----------------------------- */
+   .winkelwagen-text-content {
+  padding: 20px;
+}
+
 /* Algemene knopstijl */
 .product-wrapper {
   display: flex;
@@ -44,6 +48,7 @@ body {
   padding: 0;
   background-color: #f6e6f9; /* zacht roze als achtergrond */
   color: #2d033b; /* diep paars voor tekst */
+  
 }
 
 /* Header / Navigatie */
@@ -57,6 +62,7 @@ header {
 header h1 {
   margin: 0;
   font-size: 28px;
+
 }
 
 /* Navigatielinks */
