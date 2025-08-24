@@ -172,3 +172,13 @@ footer {
 .social-share i {
   font-size: 18px; /* iets groter icoon */
 }
+
+.whatsapp-btn {
+  background-color: #25D366; /* WhatsApp groen */
+  color: white;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe57; /* donkerder groen bij hover */
+  transform: scale(1.05);
+}
