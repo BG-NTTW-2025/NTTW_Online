@@ -3,6 +3,21 @@
    Thema: Paars / Roze
    ----------------------------- */
 /* Algemene knopstijl */
+.product-wrapper {
+  display: flex;
+  justify-content: center;  /* Centreert alles horizontaal */
+  align-items: flex-start;  /* Uitlijnen bovenaan */
+  gap: 10px;                /* Ruimte tussen kaart en afbeelding */
+  margin: 10px auto;
+  flex-wrap: wrap;          /* Zorgt dat ze onder elkaar komen op mobiel */
+}
+
+.product-side-image img {
+  max-width: 580px;
+  height: auto;
+  border-radius: 8px;
+}
+
 .btn {
   display: inline-block;
   padding: 12px 24px;
