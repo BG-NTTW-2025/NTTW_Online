@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NTTW Escape to Higher Ground - Extra Info</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* -----------------------------
+   Extra Info pagina
+   ----------------------------- */
+.extra-info-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.extra-info-container h1 {
+  font-size: 28px;
+  color: #6a0572;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.extra-info-container p {
+  font-size: 16px;
+  color: #2d033b;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.large-img-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.large-img-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+  transition: opacity 0.3s ease;
+}
+
+.thumbs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.thumbs img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.thumbs img:hover {
+  transform: scale(1.05);
+}
+
+.thumbs img.selected-thumb {
+  border-color: #4a69bd;
+}
+
+.back-btn {
+  display: block;
+  margin: 0 auto 30px auto;
+  padding: 10px 24px;
+  background-color: #4a69bd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #3b5286;
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<div class="extra-info-container">
+<h2>No Time To Waste – Escape to Higher Ground</h2>
+
+<p>
+  NTTW – Escape to Higher Ground is het spannende bordspel waarin je de strijd aangaat tegen het water én tegen elkaar.
+</p>
+
+<p>
+  Speel <strong>competitief (ieder voor zich)</strong>, 
+  <strong>coöperatief (gezamenlijk)</strong> of zelfs <strong>solo</strong> tegen het water en een maximum aantal beurten of tijdslimiet.
+</p>
+
+<p>
+  Het unieke <strong>onderwater zetten-systeem</strong> met D4-dobbelstenen maakt elke zet strategisch en spannend. 
+  Actie- en waterbeheersingskaarten kunnen het spel in één ronde volledig omgooien. 
+  En dreigt je pion te verdrinken? Dan kan een worp met de D6 dobbelsteen je laatste redding zijn!
+</p>
+
+<p>
+  Het spel is <strong>schaalbaar</strong>: van een kort, vriendschappelijk potje van een half uur tot een intens confrontatiespel van meer dan een uur. 
+  Dankzij het flexibele ontwerp is NTTW geschikt voor <strong>1 tot wel 16 spelers</strong> – solo, in kleine groepen of in teams.
+</p>
+
+<p>
+  De bijgeleverde apps ondersteunen het spel, maar zijn niet noodzakelijk. 
+  Geef beginners een voorsprong, zodat NTTW altijd een uitdaging blijft – voor jong én oud, starters en gevorderden.
+</p>
+
+
+  <!-- Grote afbeelding -->
+  <div class="large-img-container">
+    <img id="large-image" src="images/nttw_large1.jpg" alt="NTTW Groot Overzicht">
+  </div>
+
+  <!-- Thumbnails -->
+  <div class="thumbs">
+    <img src="images/nttw_thumb1.jpg" alt="Thumbnail 1" class="selected-thumb" onclick="switchImage(this, 'images/nttw_large1.jpg')">
+    <img src="images/nttw_thumb2.jpg" alt="Thumbnail 2" onclick="switchImage(this, 'images/nttw_large2.jpg')">
+    <img src="images/nttw_thumb3.jpg" alt="Thumbnail 3" onclick="switchImage(this, 'images/nttw_large3.jpg')">
+    <img src="images/nttw_thumb4.jpg" alt="Thumbnail 4" onclick="switchImage(this, 'images/nttw_large4.jpg')">
+    <img src="images/nttw_thumb5.jpg" alt="Thumbnail 5" onclick="switchImage(this, 'images/nttw_large5.jpg')">
+  </div>
+
+  <!-- Terug naar producten -->
+  <a href="producten.html" class="back-btn">Terug naar producten</a>
+</div>
+
+<script>
+// Wissel de grote afbeelding bij thumbnail click
+function switchImage(thumb, largeSrc) {
+  const largeImg = document.getElementById('large-image');
+  largeImg.style.opacity = 0; // fade out
+  setTimeout(() => {
+    largeImg.src = largeSrc;
+    largeImg.style.opacity = 1; // fade in
+  }, 200);
+
+  // markeer geselecteerde thumbnail
+  document.querySelectorAll('.thumbs img').forEach(img => img.classList.remove('selected-thumb'));
+  thumb.classList.add('selected-thumb');
+}
+</script>
+
+</body>
+</html>
